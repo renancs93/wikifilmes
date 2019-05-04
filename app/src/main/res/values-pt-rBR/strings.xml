@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wiki Filmes SDM</string>
+    <string name="txt_type">"Tipo: "</string>
+    <string name="txt_name">"Nome: "</string>
+    <string name="subtitle_home">Saiba tudo sobre os seus filmes</string>
+    <string name="txt_imdb_rating">"Nota IMDB: "</string>
+    <string name="txt_actors">"Atores: "</string>
+    <string name="txt_year">"Ano: "</string>
+    <string name="txt_director">"Diretor: "</string>
+    <string name="txt_production">"Produtora: "</string>
+    <string name="txt_genre">"Gênero: "</string>
+    <string name="txt_writer">"Escritor: "</string>
+    <string name="txt_plot">"Enredo: "</string>
+</resources>
