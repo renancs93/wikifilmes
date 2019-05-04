@@ -12,4 +12,7 @@
     <string name="txt_genre">"Gênero: "</string>
     <string name="txt_writer">"Escritor: "</string>
     <string name="txt_plot">"Enredo: "</string>
+    <string name="txt_search">Buscar</string>
+    <string name="txt_clean">Limpar</string>
+    <string name="txt_hint_title_film">Título do Filme</string>
 </resources>

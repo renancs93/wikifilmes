@@ -5,7 +5,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:card_view="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:padding="10dp"
-              android:background="@android:color/white"
+              android:background="@drawable/shape_background"
 >
 
     <TextView android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/field_search"
-                android:hint="Título do Filme"
+                android:hint="@string/txt_hint_title_film"
         />
 
     </android.support.design.widget.TextInputLayout>
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_search"
-            android:text="Buscar"
+            android:text="@string/txt_search"
             android:textSize="18sp"
             android:backgroundTint="@color/colorPrimary"
     />
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_clear"
-            android:text="Limpar"
+            android:text="@string/txt_clean"
             android:textSize="18sp"
             android:backgroundTint="@android:color/holo_orange_light"
     />

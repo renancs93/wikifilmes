@@ -42,6 +42,7 @@ class HomeFragment : Fragment() {
         omdb.callback = object : Omdb.MovieCallback{
 
             override fun onResponseFail(obj: Movie) {
+                result_card.visibility = View.VISIBLE
                 field_title.text = obj.error
             }
 
@@ -49,7 +50,7 @@ class HomeFragment : Fragment() {
 
                 result_card.visibility = View.VISIBLE
 
-                if (obj != null){
+                if (obj !== null){
                     field_title.text = getString(R.string.txt_name) + obj.title
                     field_year.text = getString(R.string.txt_year) + obj.year
                     field_type.text = getString(R.string.txt_type) + obj.type
@@ -64,17 +65,17 @@ class HomeFragment : Fragment() {
                     //Load Image Poster
                     val posterUrl = obj.poster
                     if (posterUrl != "") {
+                        field_poster.visibility = View.VISIBLE
                         field_poster.loadPicasso(posterUrl)
+                    }
+                    else{
+                        field_poster.visibility = View.GONE
                     }
                 }
             }
         }
 
         return layoutView
-    }
-
-    init {
-
     }
 
 }
