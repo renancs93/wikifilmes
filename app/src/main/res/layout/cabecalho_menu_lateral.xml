@@ -12,8 +12,9 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_android_white_48dp"
+            android:src="@drawable/ic_android_white"
             android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:tint="@color/colorPrimary"
     />
 

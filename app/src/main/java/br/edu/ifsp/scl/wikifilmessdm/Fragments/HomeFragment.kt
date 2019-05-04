@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import br.edu.ifsp.scl.wikifilmessdm.MainActivity
 import br.edu.ifsp.scl.wikifilmessdm.Models.Movie
 import br.edu.ifsp.scl.wikifilmessdm.R
@@ -15,12 +15,12 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.view.*
 
+
 class HomeFragment : Fragment() {
 
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val layoutView = inflater.inflate(R.layout.home_fragment, null)
+
+        val layoutView = inflater.inflate(br.edu.ifsp.scl.wikifilmessdm.R.layout.home_fragment, null)
         val omdb = Omdb(activity as MainActivity)
 
         layoutView.btn_search.setOnClickListener {
@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
             var txtMovie: String = field_search.text.toString()
 
             if (txtMovie.isNotEmpty()) {
-                omdb.searchMovie(txtMovie)
+                omdb.findMovie(txtMovie)
             }
         }
 
@@ -40,6 +40,11 @@ class HomeFragment : Fragment() {
         }
 
         omdb.callback = object : Omdb.MovieCallback{
+            override fun onRequestFail(err: Throwable) {
+
+                Toast.makeText(this@HomeFragment.context, err.message, Toast.LENGTH_LONG).show()
+
+            }
 
             override fun onResponseFail(obj: Movie) {
                 result_card.visibility = View.VISIBLE
@@ -50,7 +55,7 @@ class HomeFragment : Fragment() {
 
                 result_card.visibility = View.VISIBLE
 
-                if (obj !== null){
+                if (obj.response.equals("True")){
                     field_title.text = getString(R.string.txt_name) + obj.title
                     field_year.text = getString(R.string.txt_year) + obj.year
                     field_type.text = getString(R.string.txt_type) + obj.type
@@ -79,6 +84,7 @@ class HomeFragment : Fragment() {
     }
 
 }
+
 
 private fun ImageView.loadPicasso(urlPoster: String) {
     Picasso.get().load(urlPoster).into(this)

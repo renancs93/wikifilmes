@@ -5,10 +5,11 @@
     <group>
         <item android:id="@+id/homeMenuItem"
               android:title="Home"
+              android:icon="@drawable/ic_home_black"
         />
         <item android:id="@+id/sairMenuItem"
               android:title="Sair"
-              android:icon="@android:drawable/ic_menu_close_clear_cancel"
+              android:icon="@drawable/ic_exit_to_app_black"
         />
     </group>
 
