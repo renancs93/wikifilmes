@@ -11,12 +11,15 @@ import br.edu.ifsp.scl.wikifilmessdm.MainActivity
 import br.edu.ifsp.scl.wikifilmessdm.Models.Movie
 import br.edu.ifsp.scl.wikifilmessdm.R
 import br.edu.ifsp.scl.wikifilmessdm.Service.Omdb
+import br.edu.ifsp.scl.wikifilmessdm.Utils
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.view.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
+
+    lateinit var objMovie: Movie
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -32,13 +35,17 @@ class HomeFragment : Fragment() {
             }
         }
 
-        layoutView.btn_clear.setOnClickListener {
+//        layoutView.field_poster.setOnClickListener {
+//
+//            var fragmenDet = DetailsFragment("Testando")
+//            Utils.replaceFragment(fragmentManager, fragmenDet)
+//
+//        }
 
-            field_search.text?.clear()
-            result_card.visibility = View.GONE
+        //click listeners
+        layoutView.btn_clear.setOnClickListener(this)
 
-        }
-
+        //Retorno da requisição
         omdb.callback = object : Omdb.MovieCallback{
             override fun onRequestFail(err: Throwable) {
 
@@ -54,6 +61,7 @@ class HomeFragment : Fragment() {
             override fun onResponse(obj: Movie) {
 
                 result_card.visibility = View.VISIBLE
+                objMovie = obj.copy()
 
                 if (obj.response.equals("True")){
                     field_title.text = getString(R.string.txt_name) + obj.title
@@ -82,6 +90,18 @@ class HomeFragment : Fragment() {
 
         return layoutView
     }
+
+    override fun onClick(v: View?) {
+
+        when(v?.id){
+
+            R.id.btn_clear -> {
+                field_search.text?.clear()
+                result_card.visibility = View.GONE
+            }
+        }
+    }
+
 
 }
 

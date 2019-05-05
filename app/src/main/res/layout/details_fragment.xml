@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:card_view="http://schemas.android.com/tools">
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <android.support.design.card.MaterialCardView
+                android:id="@+id/result_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="5dp"
+                card_view:cardUseCompatPadding="true"
+                app:cardElevation="3dp"
+        >
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:layout_gravity="center"
+                          android:padding="10dp"
+            >
+                <ImageView
+                        android:id="@+id/field_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:maxHeight="400dp"
+                        android:maxWidth="300dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/cinema_popcorn"
+                />
+
+                <TextView android:id="@+id/field_title"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_name"
+                />
+                <TextView android:id="@+id/field_year"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_year"
+                />
+                <TextView android:id="@+id/field_type"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_type"
+                />
+                <TextView android:id="@+id/field_imdb_rating"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_imdb_rating"
+                />
+                <TextView android:id="@+id/field_actors"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_actors"
+                />
+                <TextView android:id="@+id/field_director"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_director"
+                />
+                <TextView android:id="@+id/field_production"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_production"
+                />
+                <TextView android:id="@+id/field_genre"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_genre"
+                />
+                <TextView android:id="@+id/field_writer"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_writer"
+                />
+                <TextView android:id="@+id/field_plot"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="@string/txt_plot"
+                />
+
+            </LinearLayout>
+
+        </android.support.design.card.MaterialCardView>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
