@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+        >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+            >
+
+                <ImageView
+                        android:id="@+id/poster_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="180dp"
+                        android:maxHeight="180dp"
+                        android:maxWidth="120dp"
+                        android:scaleType="fitXY"
+                />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="10dp"
+            >
+                <TextView
+                        android:id="@+id/imdb_id_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_imdbID"
+                        android:textSize="18sp"
+                />
+                <TextView
+                        android:id="@+id/title_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_title"
+                        android:textSize="18sp"
+                />
+                <TextView
+                        android:id="@+id/year_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_year"
+                        android:textSize="18sp"
+                />
+                <TextView
+                        android:id="@+id/type_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_type"
+                        android:textSize="18sp"
+                />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

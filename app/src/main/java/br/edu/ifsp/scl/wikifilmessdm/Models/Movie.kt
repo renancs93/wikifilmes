@@ -51,8 +51,8 @@ data class Movie(
     var production: String = "",
     @SerializedName("Website")
     var website: String = "",
-    @SerializedName("Response")
 
+    @SerializedName("Response")
     var response: String = "",
 
     //Error na Requisição
@@ -63,6 +63,15 @@ data class Movie(
     @SerializedName("Source")
     var source: String = "",
     @SerializedName("Value")
-    var value: String = ""
+    var value: String = "",
+
+    //Search Movies List
+    // Fields on Response (Title, Year, imdbID, Type e Poster + Search[array], totalResults e Response)
+    @SerializedName("Search")
+    var search: List<Movie> = listOf(),
+    @SerializedName("totalResults")
+    var totalResults: String = "",
+    @SerializedName("page")
+    var page: Int = 1
 
 )

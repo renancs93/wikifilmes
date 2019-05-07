@@ -15,4 +15,7 @@
     <string name="txt_search">Buscar</string>
     <string name="txt_clean">Limpar</string>
     <string name="txt_hint_title_film">Título do Filme</string>
+    <string name="txt_movie_serie">Filme/Série</string>
+    <string name="txt_total_results">"Total de Resultados: "</string>
+    <string name="txt_title">"Título: "</string>
 </resources>

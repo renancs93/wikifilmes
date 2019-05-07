@@ -1,7 +1,11 @@
 package br.edu.ifsp.scl.wikifilmessdm
 
+
+import android.provider.Settings.Global.getString
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import android.widget.ImageView
+import com.squareup.picasso.Picasso
 
 object Utils{
 
@@ -12,6 +16,10 @@ object Utils{
         val fragmentTransaction = fragmenCurrent?.beginTransaction()
         fragmentTransaction?.replace(R.id.fragmentContainer, fragmentTarget)
         fragmentTransaction?.commit()
+    }
+
+    public fun ImageView.loadPicasso(urlPoster: String) {
+        Picasso.get().load(urlPoster).into(this)
     }
 
 }

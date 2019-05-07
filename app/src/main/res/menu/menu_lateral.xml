@@ -7,6 +7,10 @@
               android:title="Home"
               android:icon="@drawable/ic_home_black"
         />
+        <item android:id="@+id/top10MenuItem"
+              android:title="Busca TOP 10"
+              android:icon="@drawable/ic_stars_black_24dp"
+        />
         <item android:id="@+id/sairMenuItem"
               android:title="Sair"
               android:icon="@drawable/ic_exit_to_app_black"

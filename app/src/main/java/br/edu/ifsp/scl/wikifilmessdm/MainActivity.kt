@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import br.edu.ifsp.scl.wikifilmessdm.Fragments.HomeFragment
+import br.edu.ifsp.scl.wikifilmessdm.Fragments.SearchFragment
 import br.edu.ifsp.scl.wikifilmessdm.Models.Movie
 import com.kotlinpermissions.KotlinPermissions
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         menuNavigationView.setNavigationItemSelectedListener { onNavigationItemSelected(it) }
 
         //inicia o primeiro fragment
-        substituiFragment(HomeFragment())
+        //substituiFragment(HomeFragment())
+        substituiFragment(SearchFragment())
 
         permissions()
     }
@@ -56,6 +58,17 @@ class MainActivity : AppCompatActivity() {
     private fun onNavigationItemSelected(item: MenuItem): Boolean {
         var retorno: Boolean = false
         when(item.itemId){
+            //ação do botão Home
+            R.id.homeMenuItem ->{
+                substituiFragment(HomeFragment())
+                retorno = true
+            }
+            //ação do botão Top 10
+            R.id.top10MenuItem ->{
+                substituiFragment(SearchFragment())
+                retorno = true
+            }
+            //ação do botão sair
             R.id.sairMenuItem -> {
                 finish()
                 retorno = true

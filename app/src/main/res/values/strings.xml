@@ -19,4 +19,11 @@
     <string name="txt_clean">Clean</string>
     <string name="txt_hint_title_film">Title of Film</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="txt_movie_serie">Movie/Serie</string>
+    <string name="txt_total_results">Total Results:</string>
+    <string name="txt_imdbID" translatable="false">"IMDB ID: "</string>
+    <string name="txt_title">Title:</string>
+    <string name="txt_top10" translatable="false">TOP 10</string>
+
 </resources>

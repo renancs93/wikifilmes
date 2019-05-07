@@ -11,7 +11,6 @@ import br.edu.ifsp.scl.wikifilmessdm.MainActivity
 import br.edu.ifsp.scl.wikifilmessdm.Models.Movie
 import br.edu.ifsp.scl.wikifilmessdm.R
 import br.edu.ifsp.scl.wikifilmessdm.Service.Omdb
-import br.edu.ifsp.scl.wikifilmessdm.Utils
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.view.*
@@ -23,7 +22,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val layoutView = inflater.inflate(br.edu.ifsp.scl.wikifilmessdm.R.layout.home_fragment, null)
+        val layoutView = inflater.inflate(R.layout.home_fragment, null)
         val omdb = Omdb(activity as MainActivity)
 
         layoutView.btn_search.setOnClickListener {
@@ -54,14 +53,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
             }
 
             override fun onResponseFail(obj: Movie) {
-                result_card.visibility = View.VISIBLE
-                field_title.text = obj.error
+                result_card.visibility = View.GONE
+                Toast.makeText(this@HomeFragment.context, obj.error, Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(obj: Movie) {
 
                 result_card.visibility = View.VISIBLE
-                objMovie = obj.copy()
+                //objMovie = obj.copy()
 
                 if (obj.response.equals("True")){
                     field_title.text = getString(R.string.txt_name) + obj.title
